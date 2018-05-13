@@ -1,0 +1,158 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">    
+<title>Home</title>
+<link  type="text/css" rel="stylesheet" href="shop.css"> 
+    <link  type="text/css" rel="stylesheet" href="animate.css">
+<link href="https://fonts.googleapis.com/css?family=Merienda+One|Merienda:400,700|Schoolbell" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis" rel="stylesheet">
+<script src="wow.js"></script>
+
+  
+              <script>
+              new WOW().init();
+              </script>
+</head>
+ 
+    <body>
+        <div id="body">
+        <div class="footer" onselectstart=" return false">
+        <div class="btn_menu" @click="showMenu = !showMenu"></div>
+        <div class="icon" onselectstart=" return false"><span onselectstart=" return false">TehnoShop</span></div>
+        </div>
+    <transition name="menuS">
+    <div class="menu" v-show="showMenu">
+        <label><input type="checkbox"  v-model="chek1" true-value="Ноутбуки" ><div class="check" onselectstart=" return false">Ноутбуки</div></label>
+        <label><input type="checkbox" v-model="chek2" true-value="Моноблоки"><div class="check" onselectstart=" return false">Моноблоки</div></label>
+        <label><input type="checkbox" v-model="chek3" true-value="Системні блоки"><div class="check" onselectstart=" return false">Системні блоки</div></label>
+        <label><input type="checkbox" v-model="chek4" true-value="Монітори"><div class="check" onselectstart=" return false">Монітори</div></label>
+        <label><input type="checkbox" v-model="chek5" true-value="Клавіатури та миші"><div class="check" onselectstart=" return false">Клавіатури та миші</div></label>
+        <label><input type="checkbox" v-model="chek6" true-value="Комплектуючі"><div class="check" onselectstart=" return false">Комплектуючі</div></label>
+        
+        <div class="author">&copy; Artem Kalancha</div>
+        </div>
+        </transition>
+        <div class="lenta">
+        <div class="cont">
+    <div v-cloak v-for="n in item"
+         v-if="chek1==n.category || chek2==n.category  || 
+         chek3==n.category  ||
+         chek4==n.category  ||
+         chek5==n.category  ||       
+         chek6==n.category  " 
+          class="item " :key="n.id">
+        
+        <div class="ranking"> {{n.rank}}/10 </div>
+        <img :src="'img/' + n.img + '.jpg'" class="item_img">
+        
+        <div  class="name">{{n.name}}</div>
+        <div class="block_item">
+        <div class="category">{{n.category}}</div> 
+        <div class="price" title="Ціна">{{n.price}}</div>
+            </div>
+        <div class="button" onselectstart=" return false" @click="details(n.id)">ДЕТАЛЬНО</div>
+    </div>
+      <div v-cloak v-for="n in item "
+         v-if="chek1=='' &&
+               chek2=='' &&
+               chek3=='' &&
+               chek4=='' &&
+               chek5=='' &&
+               chek6=='' 
+               " 
+          class="item ">
+        
+        <div class="ranking"> {{n.rank}}/10 </div>
+        <img :src="'img/' + n.img + '.jpg'" class="item_img">
+        
+        <div  class="name">{{n.name }}</div>
+        <div class="block_item">
+        <div class="category">{{n.category}}</div> 
+        <div class="price" title="Ціна">{{n.price}}</div>
+            </div>
+        <div @click="details(n.id)" class="button" onselectstart=" return false">ДЕТАЛЬНО</div>
+    </div> 
+    
+  
+            </div>
+        
+        
+        </div>
+
+       
+      
+ <div v-cloak class="tab_mes wow zoomInUp" v-if="showMes">
+        <div class="esc_mes" @click="showMes = !showMes"></div>
+     <div class="name_mes"><b>Назва товару :</b> {{vname}}</div>    
+        <div class="name_mes"><b>Кількість товару :</b> {{vcount}}</div>    
+     <div class="name_mes"><b>Ціна замoвлення : </b>{{vsum }} грн. </div>    
+        <div class="success_mes">Замовлення прийнято</div>    
+            
+            </div>  
+            
+            
+<div v-cloak v-if="showCov" class="cov ">
+                    <div class="esc" @click="showCov = !showCov"></div>
+
+    <div class="tablet ">
+
+    <img :src="'img/' + vimg + '.jpg'" class="tab_img">
+    <div class="postulat">
+        <div class="tab_name">{{vname}}</div>
+        
+        <div class="tab_category">{{vcategory}}</div>
+        <div class="tab_renk">{{vrank}}/10</div>
+        <div class="col">
+        <input v-model="vcount" type="number"max=10 min=1 class="tab_in" placeholder="Кількість">
+        <div class="tab_price">{{vprice}} грн.</div>
+            </div>
+        <div class="text1">{{vdesc}}</div>
+        </div>    
+    <div v-html="vproprt" class="desp">
+        
+        </div> 
+    <div class="solt">
+        <div class="btn_sell">
+             <div class="subbtn">Купити</div><div class="bt1" @click="show()">Пітвердити</div>
+       
+        </div>
+        <div class="tab_price">{{pr()}} грн.</div>
+        </div>
+    </div>    
+        
+        
+    </div> 
+</div>
+<div class="prev">
+   
+<div class="div" id="d1"></div>        
+<div class="div" id="d2"></div>        
+<div class="div" id="d3"></div>        
+<div class="div" id="d4"></div>         
+<div class="div" id="d5"></div>        
+<div class="div" id="d6"></div>        
+<div class="div" id="d7"></div>        
+<div class="div" id="d8"></div>        
+<div class="div" id="d9"></div>        
+<div class="div" id="d10"></div>        
+<div class="div" id="d11"></div>        
+<div class="div" id="d12"></div>        
+<div class="div" id="d13"></div>        
+<div class="div" id="d14"></div>        
+<div class="div" id="d15"></div>         
+<div class="div" id="d16"></div>        
+<div class="div" id="d17"></div>        
+<div class="div" id="d18"></div>        
+<div class="div" id="d19"></div>        
+<div class="div" id="d20"></div>        
+<div class="div" id="d21"></div>
+    <div class="div" id="d22"></div>     
+ 
+</div> 
+    
+    <script src="jquery-3.3.1.js"></script>
+ <script src="Tvue.js"></script>  
+<script src="tehnoshopJS.js"></script>   </body>
+</html>
