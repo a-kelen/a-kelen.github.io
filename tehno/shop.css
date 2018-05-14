@@ -30,7 +30,7 @@
     width: 100%;
     background: #2cc3a5;
     margin: 0px;
-    border-radius: 50%;
+    
     z-index: 20px;
     transition: .4s;
     
@@ -39,10 +39,17 @@
   from {transform: scale(1);}
   to {
 transform: scale(0);
+    border-radius: 50%;
+  }
+}
+@keyframes anim2 {
+  from {transform: scale(0) translateY(-175px);}
+  to {
+transform: scale(1) translateY(0px);
   }
 }
 #d3 {
-    transform: scale(2);
+    transform: scale(1.5);
     background: #2cc3a5;
     animation: anim1 1s 1.4s;
     animation-fill-mode: forwards;  
@@ -292,6 +299,9 @@ transform: scale(1.17);
     margin: 60px 0 0  250px ;
     
 }
+* {
+    transition: all .4s;
+}
 .cont {
    padding: 10px;
     display: grid;
@@ -308,6 +318,8 @@ transform: scale(1.17);
     overflow: hidden;
     transition: 1s;
     padding: 10px;
+    animation: anim2 1s ;
+    animation-fill-mode: forwards; 
 }
 input[type="checkbox"] {
     display: none;
@@ -421,7 +433,12 @@ input[type="checkbox"]:checked ~ .check {
     color: #fff;
     z-index: 3;
 }
-
+@keyframes anim3 {
+  from {opacity: 0}
+  to {
+      opacity: 1;
+  }
+}
 .cov {
     display: block;
     position:fixed;
@@ -433,6 +450,8 @@ input[type="checkbox"]:checked ~ .check {
     top:0px;
     left: 0;
     z-index: 201;
+    animation: anim3 1s ;
+    animation-fill-mode: forwards;
 }
 
 .tab_img {
@@ -516,6 +535,20 @@ input[type="checkbox"]:checked ~ .check {
     grid-area: solt;
     
 }
+@keyframes anim4 {
+    0% {
+        transform: scale(0);
+    }
+    70% {
+        transform: scale(1.05);
+    }
+    90% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
 .tablet {
     height: auto;
     max-width: 800px;
@@ -524,6 +557,8 @@ input[type="checkbox"]:checked ~ .check {
     border-radius: 4px;
     display: grid;
     margin: 0px auto;
+    animation: anim4 1.4s;
+    animation-fill-mode: forwards;
     box-shadow: 0 0 10px #adadad; 
     grid-template-columns:300px 1fr 2fr;
     grid-template-rows: 200px 2fr 50px;
@@ -585,6 +620,12 @@ input[type="checkbox"]:checked ~ .check {
     box-shadow: 4px 4px  0 #cc4040;
     
 }
+@keyframes animesc {
+  from {transform: translateY(-100px);}
+  to {
+      transform: translateY(0);
+  }
+}
 .esc {
     height: 40px;
     width: 60px;
@@ -595,6 +636,8 @@ input[type="checkbox"]:checked ~ .check {
     background-image: url(up-arrow.png);
     background-repeat: no-repeat;
     background-position:center;
+    animation: animesc 2.8s;
+    animation-fill-mode: forwards;
     cursor: pointer;
 }
 .postulat > .tab_price {
