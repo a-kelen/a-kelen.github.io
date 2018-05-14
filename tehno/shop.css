@@ -621,7 +621,7 @@ input[type="checkbox"]:checked ~ .check {
     
 }
 @keyframes animesc {
-  from {transform: translateY(-100px);}
+  from {transform: translateY(100px);}
   to {
       transform: translateY(0);
   }
