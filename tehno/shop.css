@@ -25,17 +25,44 @@
     animation-fill-mode: forwards;
 }
 .div {
-    display:block;
-    float: left;
+    position: absolute;
     height: 100%;
-    width: 5%;
+    width: 100%;
     background: #2cc3a5;
     margin: 0px;
+    border-radius: 50%;
     z-index: 20px;
+    transition: .4s;
     
+}
+@keyframes anim1 {
+  from {transform: scale(1);}
+  to {
+transform: scale(0);
+  }
+}
+#d3 {
+    transform: scale(2);
+    background: #2cc3a5;
+    animation: anim1 1s 1.4s;
+    animation-fill-mode: forwards;  
+}
+#d2 {
+    transform: scale(1.2);
+    background: #50e3c7;
+    animation: anim1 1s 1.46s;
+    animation-fill-mode: forwards; 
+}
+#d1 {
+    transform: scale(1);
+    background: #6af8dd;
+    animation: anim1 1s 1.52s;
+    animation-fill-mode: forwards; 
 }
 
 
+
+/*
 @keyframes anim1 {
   from {transform: translateY(0);}
   to {
@@ -85,98 +112,99 @@ transform: translateY(1000px);
 }
 #d4 {
 
-    animation: anim4 1s .3s;
+    animation: anim4 1s .24s;
   
     animation-fill-mode: forwards;
 }
 #d5 {
         
 
-    animation: anim5 1s .4s;
+    animation: anim5 1s .32s;
  
     animation-fill-mode: forwards;
 }
 #d6 {
         
 
-    animation: anim5 1s .5s;
+    animation: anim5 1s .40s;
  
     animation-fill-mode: forwards;
 }
 #d7 {
         
 
-    animation: anim5 1s .6s;
+    animation: anim5 1s .47s;
  
     animation-fill-mode: forwards;
 }
 #d8 {
         
 
-    animation: anim5 1s .7s;
+    animation: anim5 1s .54s;
  
     animation-fill-mode: forwards;
 }
 #d9 {
         
 
-    animation: anim5 1s .8s;
+    animation: anim5 1s .61s;
  
     animation-fill-mode: forwards;
 }
 #d10 {
         
-    animation: anim5 1s .9s;
+    animation: anim5 1s .67s;
     animation-fill-mode: forwards;
 }
 #d11 {
-    animation: anim5 1s 1s;
+    animation: anim5 1s .73s;
     animation-fill-mode: forwards;
 }
 #d12 {
-    animation: anim5 1s 1.1s;
+    animation: anim5 1s .79s;
     animation-fill-mode: forwards;
 }
 #d13 {
-    animation: anim5 1s 1.2s;
+    animation: anim5 1s .85s;
     animation-fill-mode: forwards;
 }
 #d14 {
-    animation: anim5 1s 1.3s;
+    animation: anim5 1s 0.90s;
     animation-fill-mode: forwards;
 }
 #d15 {
-    animation: anim5 1s 1.4s;
+    animation: anim5 1s .95s;
     animation-fill-mode: forwards;
 }
 #d16 {
-    animation: anim5 1s 1.5s;
+    animation: anim5 1s 1s;
     animation-fill-mode: forwards;
 }
 #d17 {
-    animation: anim5 1s 1.6s;
+    animation: anim5 1s 1.05s;
     animation-fill-mode: forwards;
 }
 #d20 {
-    animation: anim5 1s 1.9s;
+    animation: anim5 1s 1.19s;
     animation-fill-mode: forwards;
 }
 #d21 {
-    animation: anim5 1s 2s;
+    animation: anim5 1s 1.23s;
     animation-fill-mode: forwards;
 }
 #d22 {
-    animation: anim5 1s 2.1s;
+    animation: anim5 1s 1.27s;
     animation-fill-mode: forwards;
 }
 #d18 {
-    animation: anim5 1s 1.7s;
+    animation: anim5 1s 1.1s;
     animation-fill-mode: forwards;
 }
 #d19 {
-    animation: anim5 1s 1.8s;
+    animation: anim5 1s 1.15s;
     animation-fill-mode: forwards;
 }
+*/
 body {
     background: rgb(235, 235, 235);
    
@@ -320,9 +348,10 @@ input[type="checkbox"]:checked ~ .check {
 
 .item_img {
     max-width: 230px;
-    max-height: 200px;
+    max-height: 140px;
     display: block;
-    margin: 0 auto;
+    margin: auto auto;
+    
    
 }
 .name {
@@ -366,6 +395,7 @@ input[type="checkbox"]:checked ~ .check {
     color: #fff;
     background: #2cc3a6;
     text-align: center;
+    
     cursor: pointer;
     box-shadow: 4px 4px  #179d83;
     transition: all .4s;
@@ -621,7 +651,7 @@ input[type="checkbox"]:checked ~ .check {
 }
 
 
-@media only screen and (max-width:650px) {
+@media  (max-width:650px) {
     .tablet {
         
         grid-template-columns: 6fr;
@@ -650,7 +680,7 @@ input[type="checkbox"]:checked ~ .check {
 }
 
 
-@media only screen and (max-width: 520px) {
+@media  (max-width: 520px) {
     
    
     .icon {
@@ -663,7 +693,9 @@ input[type="checkbox"]:checked ~ .check {
         margin: 15px 5px;
         width: 150px;
     }
-   
+    .esc_mes {
+        transform: scale(1.1);
+    }
 
 }
 
